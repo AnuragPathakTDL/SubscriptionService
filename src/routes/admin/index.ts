@@ -38,13 +38,6 @@ export default async function adminRoutes(app: FastifyInstance) {
     {
       schema: {
         body: planBodySchema,
-        response: {
-          201: planBodySchema.extend({
-            id: z.string().uuid(),
-            createdAt: z.date(),
-            updatedAt: z.date(),
-          }),
-        },
       },
     },
     async (request, reply) => {
